@@ -40,3 +40,10 @@ function showAnswer() {
     rerender();
     answerShowed = true;
 }
+
+const counter = document.getElementById('counter');
+function updateCounter() {
+    counter.innerText = String(Number(counter.innerText)+1);
+}
+
+next();
