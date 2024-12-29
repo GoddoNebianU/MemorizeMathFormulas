@@ -29,14 +29,14 @@ function rerender() {
 
 function next() {
     nowQA = formulasArr[Math.floor(Math.random() * formulasArr.length)];
-    mathP.innerText = String.raw`\[` + nowQA[0] + String.raw`\]`;
+    mathP.innerText = String.raw`\(` + nowQA[0] + String.raw`\)`;
     rerender();
     answerShowed = false;
 }
 
 function showAnswer() {
     if(answerShowed || nowQA===null) return;
-    mathP.innerText = String.raw`\[` + nowQA[0] + '=' + nowQA[1] + String.raw`\]`;
+    mathP.innerText = String.raw`\(` + nowQA[0] + '=' + nowQA[1] + String.raw`\)`;
     rerender();
     answerShowed = true;
 }
