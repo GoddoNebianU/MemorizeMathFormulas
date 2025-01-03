@@ -12,12 +12,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
-<div class="container">
-<p id="mathP"></p>
+<div id="con">
+<div id="container">
+    <p id="mathP"></p>
+    <a class="waves-effect waves-light btn blue" onclick="next();updateCounter()">next</a>
+    <a class="waves-effect waves-light btn green" onclick="showAnswer()">show answer</a>
+    <p id="memorized">已记忆：<i id="counter">0</i></p>
 </div>
-<a class="waves-effect waves-light btn" onclick="next();updateCounter()">next</a>
-<a class="waves-effect waves-light btn" onclick="showAnswer()">show answer</a>
-<p>已记忆：<i id="counter">0</i></p>
+</div>
 <script src="index.js"></script>
 </body>
 </html>
