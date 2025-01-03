@@ -1,7 +1,6 @@
 #container {
     min-height: 35px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    width: 80vw;
     padding: 10px;
     border-radius: 10px;
     background-color: #e0f7fa;
