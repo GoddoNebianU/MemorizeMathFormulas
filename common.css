@@ -1,5 +1,5 @@
 #container {
-    min-height: 35px;
+    height: 475px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     padding: 10px;
     border-radius: 10px;
@@ -20,6 +20,7 @@ body {
 
 #mathP {
     background-color: #00000010;
+    height: 75px;
     padding: 10px;
     border-radius: 10px;
     font-size: larger;

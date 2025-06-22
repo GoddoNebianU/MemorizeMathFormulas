@@ -36,23 +36,23 @@ const formulas = {
 
 %%
 格林公式||
-\iint\limits_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) \mathrm{d}x \mathrm{d}y
+\iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) \mathrm{d}x \mathrm{d}y
 ==\oint_L P \, \mathrm{d}x + Q \, \mathrm{d}y
 
 %%
 对面积的曲面积分||
-\iint\limits_\Sigma f(x,y,z) \, \mathrm{d}S
-==\iint\limits_{D_{xy}} f\big[x,y,z(x,y)\big] \sqrt{1 + z_x^2(x,y) + z_y^2(x,y)} \, \mathrm{d}x \mathrm{d}y
+\iint_\Sigma f(x,y,z) \, \mathrm{d}S
+==\iint_{D_{xy}} f\big[x,y,z(x,y)\big] \sqrt{1 + z_x^2(x,y) + z_y^2(x,y)} \, \mathrm{d}x \mathrm{d}y
 
 %%
 对坐标的曲面积分||
-\iint\limits_\Sigma R(x,y,z) \, \mathrm{d}x\mathrm{d}y
-==\iint\limits_{D_{xy}}R[x,y,z(x,y)] \, \mathrm{d}x\mathrm{d}y
+\iint_\Sigma R(x,y,z) \, \mathrm{d}x\mathrm{d}y
+==\iint_{D_{xy}}R[x,y,z(x,y)] \, \mathrm{d}x\mathrm{d}y
 
 %%
 高斯公式||
-\iiint\limits_{\Omega} \left( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} \right) \mathrm{d}V
-==O\iint\limits_{\Sigma} \left( P \mathrm{d}y \mathrm{d}z + Q \mathrm{d}z \mathrm{d}x + R \mathrm{d}x \mathrm{d}y \right)
+\iiint_{\Omega} \left( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} \right) \mathrm{d}V
+==O\iint_{\Sigma} \left( P \mathrm{d}y \mathrm{d}z + Q \mathrm{d}z \mathrm{d}x + R \mathrm{d}x \mathrm{d}y \right)
 
 %%
 斯托克斯公式||
@@ -69,12 +69,14 @@ const formulas = {
 %%
 
 
-傅里叶级数a_n
+傅里叶级数||
+a_n
 ==\frac{1}{\pi}\int_{-\pi}^{\pi} f(x) \cos nx \, \mathrm{d}x
 
 %%
 
-傅里叶级数b_n
+傅里叶级数||
+b_n
 ==\frac{1}{\pi}\int_{-\pi}^{\pi} f(x) \sin nx \, \mathrm{d}x
 
 
@@ -132,7 +134,7 @@ function rerender() {
 function next() {
     nowQA = formulasArr[Math.floor(Math.random() * formulasArr.length)];
     mathP.innerText = String.raw`\(` + nowQA[0] + String.raw`\)`;
-    mathPT.innerText = nowQA.length === 3 ? nowQA[2] : '';
+    mathPT.innerHTML = nowQA.length === 3 ? nowQA[2] : '<br>';
     rerender();
     answerShowed = false;
 }
