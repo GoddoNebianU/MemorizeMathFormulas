@@ -24,6 +24,37 @@ const formulas = {
 `,
     高等数学2: String.raw`
 %%
+%%
+%%%%
+%%
+%%%%
+%%
+%%
+
+隐函数的求导公式||
+\frac{\mathrm{d}y}{\mathrm{d}x}
+== -\frac{F_x}{F_y}
+
+%%
+
+向量值函数的导数||
+\vec{f'(t_0)}
+== f'_1(t_0)\vec{i} + f'_2(t_0)\vec{j} + f'_3(t_0)\vec{k}
+
+%%
+
+梯度||
+\overrightarrow{grad} \, f(x_0, y_0)
+== f_x(x_0, y_0)\vec{i} + f_y(x_0, y_0)\vec{j}
+
+%%
+
+方向导数||
+\left.\frac{\partial f}{\partial l}\right|{(x_0,y_0)}
+==f_x(x_0, y_0) \cos\alpha + f_y(x_0, y_0) \cos\beta
+
+%%
+
 对弧长的曲线积分||
 \int_L f(x,y) \, \mathrm{d}s
 ==\int_\alpha^\beta f[\phi(t),\psi(t)] \sqrt{\phi'^2(t) + \psi'^2(t)} \, \mathrm{d}t, \quad \alpha < \beta
@@ -79,6 +110,8 @@ a_n
 b_n
 ==\frac{1}{\pi}\int_{-\pi}^{\pi} f(x) \sin nx \, \mathrm{d}x
 
+%%
+
 
 `,
     线性代数: String.raw`
@@ -130,7 +163,13 @@ let nowQA = null;
 const counter_f = (() => {
     let i = -1;
     return {
-        update: () => {
+        last: () => {
+            i --;
+            if (i < 0)
+                i += formulasArr.length;
+            return i;
+        },
+        next: () => {
             i = (i + 1) % formulasArr.length;
             return i;
         },
@@ -149,7 +188,16 @@ function rerender() {
 
 function next() {
     // nowQA = formulasArr[Math.floor(Math.random() * formulasArr.length)];
-    nowQA = formulasArr[counter_f.update()];
+    nowQA = formulasArr[counter_f.next()];
+    fresh();
+}
+
+function last() {
+    nowQA = formulasArr[counter_f.last()];
+    fresh();
+}
+
+function fresh() {
     mathP.innerText = String.raw`\(` + nowQA[0] + String.raw`\)`;
     mathPT.innerText = counter_f.getIndex() + '. ' + (nowQA.length === 3 ? nowQA[2] : '');
     rerender();
