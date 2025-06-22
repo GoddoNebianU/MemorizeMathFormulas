@@ -24,6 +24,6 @@ body {
     border-radius: 10px;
 }
 
-#memorized {
+.inner-text {
     font-size: x-small;
 }

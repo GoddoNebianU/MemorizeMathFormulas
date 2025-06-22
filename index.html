@@ -1,27 +1,57 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <title>MathJax example</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <script async id="MathJax-script"
-            src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script async id="MathJax-script" src="./tex-mml-chtml.js">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="./materialize.min.js"></script>
+    <link rel="stylesheet" href="./materialize.min.css">
     <link href="./common.css" rel="stylesheet">
     <link href="./desktop.css" rel="stylesheet" media="screen and (min-width: 789px)">
     <link href="./mobile.css" rel="stylesheet" media="screen and (max-width: 789px)">
 </head>
+
 <body>
-<div id="con">
-<div id="container">
-    <p id="mathP"></p>
-    <a class="waves-effect waves-light btn blue" onclick="next();updateCounter()">next</a>
-    <a class="waves-effect waves-light btn green" onclick="showAnswer()">show answer</a>
-    <p id="memorized">已记忆：<i id="counter">0</i></p>
-</div>
-</div>
-<script src="index.js"></script>
+    <div id="con">
+        <div id="container">
+            <p id="mathPT"></p>
+            <p id="mathP"></p>
+            <a class="waves-effect waves-light btn blue" onclick="next();updateCounter()">下一个</a>
+            <a class="waves-effect waves-light btn green" onclick="showAnswer()">答案</a>
+            <p class="inner-text" id="memorized">已记忆：<i id="counter">0</i></p>
+            <p class="inner-text">当前公式组：<span id="formula-set-name"></span></p>
+            <form id="formula-select">
+                <p>
+                    <label>
+                        <input name="group1" type="radio" checked />
+                        <span>高等数学1</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="group1" type="radio" />
+                        <span>高等数学2</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="group1" type="radio" />
+                        <span>线性代数</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="group1" type="radio" />
+                        <span>大学物理</span>
+                    </label>
+                </p>
+            </form>
+        </div>
+    </div>
+    <script src="index.js"></script>
 </body>
+
 </html>
