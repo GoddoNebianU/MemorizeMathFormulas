@@ -2,7 +2,7 @@
 <html lang="zh">
 
 <head>
-    <title>MathJax example</title>
+    <title>记忆公式</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script async id="MathJax-script" src="./tex-mml-chtml.js">
@@ -23,6 +23,7 @@
             <a class="waves-effect waves-light btn green" onclick="showAnswer()">答案</a>
             <p class="inner-text" id="memorized">已记忆：<i id="counter">0</i></p>
             <p class="inner-text">当前公式组：<span id="formula-set-name"></span></p>
+            <p class="inner-text">如果文字被截断，请手动缩放网页。</p>
             <form id="formula-select">
                 <p>
                     <label>
@@ -36,7 +37,7 @@
                         <span>高等数学2</span>
                     </label>
                 </p>
-                <p>
+                <!-- <p>
                     <label>
                         <input name="group1" type="radio" />
                         <span>线性代数</span>
@@ -47,10 +48,11 @@
                         <input name="group1" type="radio" />
                         <span>大学物理</span>
                     </label>
-                </p>
+                </p> -->
             </form>
         </div>
     </div>
+    <div class="warning">屏幕过小，请使用大屏幕设备（如PC）查看，或调整窗口大小。</div>
     <script src="index.js"></script>
 </body>
 

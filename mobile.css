@@ -1,7 +1,11 @@
-#mathP {
-    font-size: small;
-}
-
 #container {
     width: 95vw;
+}
+
+#con {
+    display: none;
+}
+
+.warning {
+    display: block;
 }
