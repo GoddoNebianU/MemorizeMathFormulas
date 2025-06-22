@@ -1,29 +1,27 @@
 const formulas = {
     高等数学1: String.raw`
-\int sec^2xdx=tanx+C
-\int csc^2xdx=-cotx+C
-\int secxtanxdx=secx+C
-\int cscxcotxdx=-cscx+C
-\int shxdx=chx+C
-\int chxdx=shx+C
-\int tanxdx=-ln|cosx|+C
-\int cotxdx=ln|sinx|+C
-\int secxdx=ln|secx+tanx|+C
-\int cscxdx=ln|cscx-cotx|+C
+\int \sec^2 x \, dx = \tan x + C
+\int \csc^2 x \, dx = -\cot x + C
+\int \sec x \tan x \, dx = \sec x + C
+\int \csc x \cot x \, dx = -\csc x + C
+\int \sinh x \, dx = \cosh x + C
+\int \cosh x \, dx = \sinh x + C
+\int \tan x \, dx = -\ln|\cos x| + C
+\int \cot x \, dx = \ln|\sin x| + C
+\int \sec x \, dx = \ln|\sec x + \tan x| + C
+\int \csc x \, dx = \ln|\csc x - \cot x| + C
 `,
     高等数学2: String.raw`
-对弧长的曲线积分=\int_Lf(x,y)ds=\oint_{\alpha}^{\beta}f[\phi(t),\psi(t)]\sqrt{\phi'^2(t)+\psi'^2(t)}dt,\alpha<\beta
-对坐标的曲线积分=\int_LP(x,y)dx+Q(x,y)dy=\int_{\alpha}^{\beta}\{P[\phi(t),\psi(t)]\phi'(t)+Q[\phi(t),\psi(t)]\psi'(t)\}dt
-格林公式=\iint\limits_{D}(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y})dxdy=\oint_LPdx+Qdy
-对面积的曲面积分=\iint\limits_{\Sigma} f(x,y,z) ds = \iint\limits_{D_{xy}} f\big[x,y,z(x,y)\big] \sqrt{1+z_x^2(x,y)+z_y^2(x,y)} \, \mathrm{d}x\mathrm{d}y
-
+对弧长的曲线积分 = \int_L f(x,y) \, ds = \int_\alpha^\beta f[\phi(t),\psi(t)] \sqrt{\phi'^2(t) + \psi'^2(t)} \, dt, \quad \alpha < \beta
+对坐标的曲线积分 = \int_L P(x,y) \, dx + Q(x,y) \, dy = \int_\alpha^\beta \left\{P[\phi(t),\psi(t)] \phi'(t) + Q[\phi(t),\psi(t)] \psi'(t)\right\} \, dt
+格林公式 = \iint\limits_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dx dy = \oint_L P \, dx + Q \, dy
+对面积的曲面积分 = \iint\limits_\Sigma f(x,y,z) \, dS = \iint\limits_{D_{xy}} f\big[x,y,z(x,y)\big] \sqrt{1 + z_x^2(x,y) + z_y^2(x,y)} \, dx dy
 `,
     线性代数: String.raw`
-    
-\int cscxdx=ln|cscx-cotx|+C
+
 `,
     大学物理: String.raw`
-    
+
 `};
 
 function loadFormulas(index) {
