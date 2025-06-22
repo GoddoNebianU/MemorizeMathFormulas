@@ -99,20 +99,20 @@ function loadFormulas(index) {
     //     result.push(ones);
     // } 数学范围8-12章
     let parts = formulas[index].split('%%')
-                               .filter(v=>v.trim() !== '')
-                               .map(v=>v.replace('\n', '')
-                                        .trim());
+        .filter(v => v.trim() !== '')
+        .map(v => v.replace('\n', '')
+            .trim());
     for (let part of parts) {
         let three = null;
         if (part.includes('||')) {
             const spt = part.split('||')
-                            .map(v=>v.trim());
+                .map(v => v.trim());
             three = spt[0];
             part = spt[1];
         }
 
         let ones = part.split('==')
-                       .map(v=>v.trim());
+            .map(v => v.trim());
         if (three !== null)
             ones.push(three);
         result.push(ones);
@@ -127,14 +127,31 @@ const selectForm = document.getElementById('formula-select');
 let answerShowed = false;
 let nowQA = null;
 
+const counter_f = (() => {
+    let i = -1;
+    return {
+        update: () => {
+            i = (i + 1) % formulasArr.length;
+            return i;
+        },
+        reset: () => {
+            i = -1;
+        },
+        getIndex: () => {
+            return i + 1;
+        }
+    }
+})();
+
 function rerender() {
     MathJax.typesetPromise([mathP]).then(() => { }).catch(_ => { });
 }
 
 function next() {
-    nowQA = formulasArr[Math.floor(Math.random() * formulasArr.length)];
+    // nowQA = formulasArr[Math.floor(Math.random() * formulasArr.length)];
+    nowQA = formulasArr[counter_f.update()];
     mathP.innerText = String.raw`\(` + nowQA[0] + String.raw`\)`;
-    mathPT.innerHTML = nowQA.length === 3 ? nowQA[2] : '<br>';
+    mathPT.innerText = counter_f.getIndex() + '. ' + (nowQA.length === 3 ? nowQA[2] : '');
     rerender();
     answerShowed = false;
 }
@@ -151,6 +168,7 @@ function updateCounter() {
 }
 
 function selectFormulas(setName) {
+    counter_f.reset();
     document.getElementById('formula-set-name').innerText = setName;
     window.formulasArr = loadFormulas(setName);
     next();
