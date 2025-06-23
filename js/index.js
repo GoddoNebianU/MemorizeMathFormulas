@@ -70,11 +70,13 @@ function rerender() {
 }
 
 function next() {
+    if (answerShowed) updateCounter();
     nowQA = formulasArr[counter_f.next()];
     fresh();
 }
 
 function last() {
+    if (answerShowed) updateCounter();
     nowQA = formulasArr[counter_f.last()];
     fresh();
 }
@@ -168,7 +170,7 @@ window.onload = () => {
         const action = {
             'n': next,
             'l': last,
-            'Enter': () => answerShowed ? (next(), updateCounter()) : showAnswer(),
+            'Enter': answerShowed ? next : showAnswer,
         }[ev.key];
         if (action) action();
     });
