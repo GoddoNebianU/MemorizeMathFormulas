@@ -164,6 +164,12 @@ window.onload = () => {
                 selectFormulas('高等数学1');
         });
 
-    if (__DEBUG__) {
-    }
+    addEventListener('keydown', (ev) => {
+        const action = {
+            'n': next,
+            'l': last,
+            'Enter': () => answerShowed ? (next(), updateCounter()) : showAnswer(),
+        }[ev.key];
+        if (action) action();
+    });
 }
