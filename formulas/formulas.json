@@ -1,0 +1,14 @@
+[
+    {
+        "name": "高等数学1",
+        "url": "./formulas/高等数学1.tex"
+    },
+    {
+        "name": "高等数学2",
+        "url": "./formulas/高等数学2.tex"
+    },
+    {
+        "name": "大学物理",
+        "url": "./formulas/大学物理.tex"
+    }
+]

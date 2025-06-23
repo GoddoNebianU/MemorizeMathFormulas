@@ -1,0 +1,148 @@
+%%
+%%
+%%
+%%
+%%
+%%
+%%
+%%
+
+%%
+%%
+%%
+%%
+%%
+%%
+%%
+%%
+
+%%
+%%
+%%
+%%
+%%
+%%
+%%
+%%
+
+
+
+%%
+
+隐函数的求导公式||
+\frac{\mathrm{d}y}{\mathrm{d}x}
+== -\frac{F_x}{F_y}
+
+%%
+
+向量值函数的导数||
+\vec{f'(t_0)}
+== f'_1(t_0)\vec{i} + f'_2(t_0)\vec{j} + f'_3(t_0)\vec{k}
+
+%%
+
+梯度||
+\overrightarrow{grad} \, f(x_0, y_0)
+== f_x(x_0, y_0)\vec{i} + f_y(x_0, y_0)\vec{j}
+
+%%
+
+方向导数||
+\left.\frac{\partial f}{\partial l}\right|{(x_0,y_0)}
+==f_x(x_0, y_0) \cos\alpha + f_y(x_0, y_0) \cos\beta
+
+%%
+
+对弧长的曲线积分||
+\int_L f(x,y) \, \mathrm{d}s
+==\int_\alpha^\beta f[\phi(t),\psi(t)] \sqrt{\phi'^2(t) + \psi'^2(t)} \, \mathrm{d}t, \quad \alpha < \beta
+
+
+%%
+对坐标的曲线积分||
+\int_L P(x,y) \, \mathrm{d}x + Q(x,y) \, \mathrm{d}y
+==\int_\alpha^\beta \left\{P[\phi(t),\psi(t)] \phi'(t) + Q[\phi(t),\psi(t)] \psi'(t)\right\} \, \mathrm{d}t
+
+%%
+格林公式||
+\iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) \mathrm{d}x \mathrm{d}y
+==\oint_L P \, \mathrm{d}x + Q \, \mathrm{d}y
+
+%%
+对面积的曲面积分||
+\iint_\Sigma f(x,y,z) \, \mathrm{d}S
+==\iint_{D_{xy}} f\big[x,y,z(x,y)\big] \sqrt{1 + z_x^2(x,y) + z_y^2(x,y)} \, \mathrm{d}x \mathrm{d}y
+
+%%
+对坐标的曲面积分||
+\iint_\Sigma R(x,y,z) \, \mathrm{d}x\mathrm{d}y
+==\iint_{D_{xy}}R[x,y,z(x,y)] \, \mathrm{d}x\mathrm{d}y
+
+%%
+高斯公式||
+\iiint_{\Omega} \left( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} \right) \mathrm{d}V
+==O\iint_{\Sigma} \left( P \mathrm{d}y \mathrm{d}z + Q \mathrm{d}z \mathrm{d}x + R \mathrm{d}x \mathrm{d}y \right)
+
+%%
+斯托克斯公式||
+\iint_{\Sigma} \left(
+  \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right) \mathrm{d}y\mathrm{d}z +
+  \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right) \mathrm{d}z\mathrm{d}x +
+  \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) \mathrm{d}x\mathrm{d}y
+\right) == \oint_{\partial \Sigma} P\mathrm{d}x + Q\mathrm{d}y + R\mathrm{d}z
+%%
+
+傅里叶级数
+==\frac{a_0}{2}+\sum_{n=1}^\infty(a_n \cos nx + b_n \sin nx)
+
+%%
+
+
+傅里叶级数||
+a_n
+==\frac{1}{\pi}\int_{-\pi}^{\pi} f(x) \cos nx \, \mathrm{d}x
+
+%%
+
+傅里叶级数||
+b_n
+==\frac{1}{\pi}\int_{-\pi}^{\pi} f(x) \sin nx \, \mathrm{d}x
+
+%%
+
+幂级数展开1||
+e^x
+==\sum_{n=0}^\infty\frac{x^n}{n\!},(-\infty<x<+\infty)
+
+%%
+
+幂级数展开2||
+\sin x
+== \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n+1)!}x^{2n+1},(-\infty<x<+\infty)
+
+%%
+
+幂级数展开3||
+\frac{1}{1+x}
+== \sum_{n=0}^{\infty}(-1)^nx^n,(-1<x<1)
+
+%%
+
+幂级数展开4||
+\frac{1}{1-x}
+== \sum_{n=0}^{\infty}x^n, (-1<x<1)
+
+%%
+
+幂级数展开5||
+\ln(1+x)
+== \sum_{n=0}^\infty \frac{(-1)^n}{n+1} x^{n+1}
+=\sum_{n=1}^\infty \frac{(-1)^{n-1}}{n}x^n, (-1<x\le1)
+
+%%
+%%
+%%
+%%
+
+
+
