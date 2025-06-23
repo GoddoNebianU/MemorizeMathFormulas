@@ -163,7 +163,8 @@ window.onload = () => {
             return Promise.all(fetchPromises);
         })
         .then(() => {
-            selectFormulas('高等数学1');
+            if (__DEBUG__)
+                selectFormulas('高等数学1');
         });
     
     if (__DEBUG__) {
