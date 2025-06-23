@@ -16,7 +16,7 @@ function loadFormulas(index) {
         .filter(v => v.trim() !== '')
         .map(v => v.replace('\n', '')
             .trim());
-    
+
     if (__DEBUG__) parts.reverse();
     for (let part of parts) {
         let three = null;
@@ -138,10 +138,6 @@ window.onload = () => {
     fetch('./formulas/formulas.json')
         .then(response => response.json())
         .then(data => {
-            for (const formulaSet of data) {
-                addSelection(formulaSet['name']);
-            }            
-
             // for (const formulaSet of data) {
             //     addSelection(formulaSet['name']);
 
@@ -152,11 +148,12 @@ window.onload = () => {
             //         });
             // }
 
-            const fetchPromises = data.map(item => 
+            const fetchPromises = data.map(item =>
                 fetch(item['url'])
                     .then(response => response.text())
                     .then(text => {
                         formulas[item['name']] = text;
+                        addSelection(item['name']);
                     })
             )
 
@@ -166,7 +163,7 @@ window.onload = () => {
             if (__DEBUG__)
                 selectFormulas('高等数学1');
         });
-    
+
     if (__DEBUG__) {
     }
 }
