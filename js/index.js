@@ -83,7 +83,7 @@ function last() {
 
 function fresh() {
     mathP.innerText = String.raw`\(` + nowQA[0] + String.raw`\)`;
-    mathPT.innerText = '\\(' + counter_f.getIndex() + '. ' + (nowQA.length === 3 ? nowQA[2] : '') + '\\)';
+    mathPT.innerText = '\\(' + counter_f.getIndex() + '.\\,' + (nowQA.length === 3 ? nowQA[2] : '') + '\\)';
     rerender();
     answerShowed = false;
 
